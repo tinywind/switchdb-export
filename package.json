@@ -1,0 +1,27 @@
+{
+  "name": "switchdb-export",
+  "version": "1.0.0",
+  "description": "Nintendo Switch games database exporter from IGDB API",
+  "main": "igdb-switch-exporter.js",
+  "scripts": {
+    "start": "node igdb-switch-exporter.js",
+    "export": "node igdb-switch-exporter.js"
+  },
+  "keywords": [
+    "nintendo",
+    "switch",
+    "igdb",
+    "games",
+    "database",
+    "export",
+    "csv"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
