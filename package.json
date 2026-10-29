@@ -5,6 +5,7 @@
   "main": "igdb-switch-exporter.js",
   "scripts": {
     "start": "node igdb-switch-exporter.js",
+    "test": "node --test test/csv-security.test.cjs",
     "export": "node igdb-switch-exporter.js"
   },
   "keywords": [

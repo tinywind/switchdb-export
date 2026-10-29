@@ -63,6 +63,11 @@ async function fetchSwitchPage(token, offset = 0, limit = 500) {
 // ------------------------
 // 메인: 전체 페이지네이션
 // ------------------------
+function csvText(value) {
+  const text = /^[\t\r\n]|^\s*[=+@＝＋－＠-]/.test(value) ? `\t${value}` : value;
+  return `"${text.replace(/"/g, '""')}"`;
+}
+
 async function main() {
   const outPath = path.join(__dirname, OUTPUT_FILE);
   const stream = fs.createWriteStream(outPath, { encoding: "utf-8" });
@@ -157,8 +162,8 @@ async function main() {
 
       // CSV 이스케이프
       const csv = [
-        `"${name.replace(/"/g, '""')}"`,
-        `"${String(platforms).replace(/"/g, '""')}"`,
+        csvText(name),
+        csvText(String(platforms)),
         `"${firstRelease}"`,
         `"${switchReleaseDate}"`,
         `"${korean}"`,
